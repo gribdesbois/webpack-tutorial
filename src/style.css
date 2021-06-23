@@ -1,3 +1,20 @@
+
+
+
+@font-face {
+  font-family: 'Austie Bost Kitten Klub';
+  src: url('./AustieBostKittenKlub.woff2') format('woff2'),
+      url('./AustieBostKittenKlub.woff') format('woff'),
+      url('./AustieBostKittenKlub.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 .hello {
-    color: red;
-  }
+  color: red;
+  font-family: 'Austie Bost Kitten Klub';
+  background: url('./icon.jpg');
+}

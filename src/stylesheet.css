@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Austie Bost Kitten Klub';
+    src: url('AustieBostKittenKlub.woff2') format('woff2'),
+        url('AustieBostKittenKlub.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
