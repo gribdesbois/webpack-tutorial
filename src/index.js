@@ -7,7 +7,7 @@ function component() {
 
   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
  
-  btn.innerHTML = 'Click  the console damm!!!!!';
+  btn.innerHTML = 'click the console damm!!!!!';
 
   btn.onclick = printMe;
 
@@ -17,7 +17,9 @@ function component() {
   return element;
 }
 
-document.body.appendChild(component());
+let element = component(); // Store the element to re-render on print.js changes
+
+document.body.appendChild(element);
 
 if (module.hot) {
 
@@ -25,7 +27,11 @@ if (module.hot) {
 
     console.log('Accepting the updated printMe module!');
 
-    printMe();
+    document.body.removeChild(element);
+
+     element = component(); // Re-render the "component" to update the click handler
+
+     document.body.appendChild(element);
 
   })
 
