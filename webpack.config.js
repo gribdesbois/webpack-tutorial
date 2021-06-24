@@ -6,8 +6,8 @@ module.exports = {
     mode: 'development',
 
     entry: {    
-        index: './src/index.js',    
-        print: './src/print.js',    
+        app: './src/index.js',
+        print: './src/print.js', 
       },
     
     devtool: 'inline-source-map',
@@ -15,12 +15,13 @@ module.exports = {
     devServer: {
 
         contentBase: './dist',
+        hot: true,
     
       },
 
     plugins: [
     new HtmlWebpackPlugin({
-        title: 'Development',
+        title: 'Hot Module Replacement',
     }),
     ],
 
