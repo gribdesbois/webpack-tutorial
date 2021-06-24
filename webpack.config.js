@@ -10,14 +10,14 @@ module.exports = {
         print: './src/print.js',    
       },
     
-    devtools: 'inline-source-map',
+    devtool: 'inline-source-map',
 
     devServer: {
 
         contentBase: './dist',
     
       },
-      
+
     plugins: [
     new HtmlWebpackPlugin({
         title: 'Development',
