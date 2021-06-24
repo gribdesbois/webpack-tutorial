@@ -1,12 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const mesfess = require('monzboub');
+
 module.exports = {
 
     mode: 'development',
 
     entry: {    
-        index: './src/index.js',
+        app: './src/index.js',
       },
     
     devtool: 'inline-source-map',
@@ -18,6 +18,22 @@ module.exports = {
     
       },
 
+    module: {
+
+        rules: [
+
+            {
+
+            test: /\.css$/,
+
+            use: ['style-loader', 'css-loader'],
+
+            },
+
+        ],
+
+    },
+    
     plugins: [
     new HtmlWebpackPlugin({
         title: 'Hot Module Replacement',
