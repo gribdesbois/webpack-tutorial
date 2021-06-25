@@ -1,39 +1,23 @@
-import _ from 'lodash';
-import printMe from './print.js';
-import './styles.css';
+
+import { cube } from "./math";
 
 function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+  const element = document.createElement('pre');
+  
+  element.innerHTML = [
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
- 
-  btn.innerHTML = 'click the console damm!!!!!';
+    'Hello webpack!',
 
-  btn.onclick = printMe;
+    '5 cubed is equal to ' + cube(5)
 
-
-  element.appendChild(btn);
+  ].join('\n\n');
 
   return element;
 }
 
-let element = component(); // Store the element to re-render on print.js changes
 
-document.body.appendChild(element);
 
-if (module.hot) {
+document.body.appendChild(component());
 
-  module.hot.accept('./print.js', function() {
 
-    console.log('Accepting the updated printMe module!');
 
-    document.body.removeChild(element);
-
-     element = component(); // Re-render the "component" to update the click handler
-
-     document.body.appendChild(element);
-
-  })
-
-}
