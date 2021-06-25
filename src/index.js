@@ -1,15 +1,33 @@
+import _ from 'lodash';
 
-async function getComponent() {
+function component() {
   const element = document.createElement('div');
-  const { default: _ } = await import('lodash');
+  const button = document.createElement('button');
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+  const br = document.createElement('br');
 
-  return element;
-}
+  button.innerHTML = 'Click me and look at the console!';
+   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 
-getComponent().then((component) => {
+  element.appendChild(br);
 
-  document.body.appendChild(component);
+  element.appendChild(button);
 
-});
+
+  // Note that because a network request is involved, some indication
+
+  // of loading would need to be shown in a production-level site/app.
+
+  button.onclick = e => import(/* webpackChunkName: "print" */ './print').then(module => {
+
+    const print = module.default;
+
+
+    print();
+
+  });
+
+   return element;
+ }
+
+ document.body.appendChild(component());
