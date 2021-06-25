@@ -11,19 +11,8 @@ module.exports = {
 
         import: './src/index.js',
   
-        dependOn: 'shared',
   
       },
-  
-      another: {
-  
-        import: './src/another-module.js',
-  
-        dependOn: 'shared',
-  
-      },
-  
-      shared: 'lodash',
 
  },
   output: {
@@ -33,14 +22,5 @@ module.exports = {
     clean:true
   },
 
-  optimization: {
-
-    splitChunks: {
-
-      chunks: 'all',
-
-    },
-
-  },
 };
 
