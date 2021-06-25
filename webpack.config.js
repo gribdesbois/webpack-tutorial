@@ -7,15 +7,35 @@ module.exports = {
 
  entry: {
 
-   index: './src/index.js',
+    index: {
 
-   another: './src/another-module.js',
+        import: './src/index.js',
+  
+        dependOn: 'shared',
+  
+      },
+  
+      another: {
+  
+        import: './src/another-module.js',
+  
+        dependOn: 'shared',
+  
+      },
+  
+      shared: 'lodash',
 
  },
   output: {
 
    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+
+  optimization: {
+
+    runtimeChunk: 'single',
+
   },
 };
 
